@@ -34,8 +34,8 @@ stages:
             displayName: ${{ parameters.displayName }}
             inputs:
               azureSubscription: '$(ConnectedServiceName)'
-              WebAppName: ${{ parameters.webAppName }}
-              appAppType: ${{ parameters.webAppType }}
+              WebAppName: '${{ parameters.webAppName }}'
+              appAppType: '${{ parameters.webAppType }}'
               packageForLinux: '$(Pipeline.Workspace)/app/s'
               RuntimeStack: 'NODE|10-lts'
               StartupCommand: '$(StartupCommand)'
