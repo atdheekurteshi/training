@@ -4,7 +4,7 @@ parameters:
   environment: ''
   stageName: ''
   webAppName: ''
-  webAppType: 'webAppLinux'
+  webAppType: ''
 
 stages:
 - stage: ${{ parameters.stageName }}
