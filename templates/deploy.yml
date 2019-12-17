@@ -1,10 +1,9 @@
 parameters:
- git gt deployment: ''
+  deployment: ''
   displayName: ''
   environment: ''
   stageName: ''
   webAppName: ''
-  webAppType: ''
 
 stages:
 - stage: ${{ parameters.stageName }}
@@ -34,8 +33,8 @@ stages:
             displayName: ${{ parameters.displayName }}
             inputs:
               azureSubscription: '$(ConnectedServiceName)'
-              WebAppName: '${{ parameters.webAppName }}'
-              appAppType: '${{ parameters.webAppType }}'
+              appType: 'webAppLinux'
+              WebAppName: ${{ parameters.webAppName }}
               packageForLinux: '$(Pipeline.Workspace)/app/s'
               RuntimeStack: 'NODE|10-lts'
               StartupCommand: '$(StartupCommand)'
